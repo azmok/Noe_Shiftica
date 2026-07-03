@@ -262,7 +262,7 @@ export default function ServicesPage() {
 
             {/* 2. DESIGNER PORTFOLIO */}
             <a
-              href="https://designer-portfolio-125127642738.us-west1.run.app/"
+              href="https://designer-portfolio-566328988333.us-west1.run.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="group neu-dark-flat aspect-[2/1] rounded-xl overflow-hidden relative border border-white/5 block"

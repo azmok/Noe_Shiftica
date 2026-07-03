@@ -5,9 +5,13 @@
 > `~/.gemini/AGENTS.md`) and project `AGENTS.md`. This file holds only Azuma's
 > standing shortcuts that override those defaults.
 
-> **Before starting any task, MUST read `.antigravity/GUARDRAILS.md`** (pre-task Signs).
-> If you hit the **same error twice**, stop trial-and-error and re-read GUARDRAILS.md
-> + the original instruction before retrying (original instruction + GUARDRAILS win over the latest failure log).
+> **Before starting any task, MUST recall the pre-task Signs** — they now live as
+> `type='sign'` events in `.antigravity/memory.db` (readable mirror:
+> `.antigravity/memory/signs.md`). Recall with
+> `uv run .antigravity/db/query.py "<what you're about to do>" --type sign`.
+> If you hit the **same error twice**, stop trial-and-error and re-read the Signs
+> + the original instruction before retrying (original instruction + Signs win over the latest failure log).
+> Memory layer contract: `.antigravity/memory-schema.md`.
 
 ## Standing instructions (Azuma)
 - バックグラウンドコマンド（App Hosting のロールアウト、長時間ビルド等）の**出力ファイルは確認しなくてよい**。完了通知 / exit code 0 だけで十分とみなす。

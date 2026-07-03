@@ -7,20 +7,23 @@ The universal workflow (Startup Protocol / HARD STOP / Learning Loop / Coder–T
 loop / Post-Edit Self-Check) lives in global `~/.gemini/AGENTS.md`. **Read it at startup.**
 
 ## Files to ALWAYS read at startup (before touching anything)
-- `.antigravity/GUARDRAILS.md`  ← pre-task Signs (known-mistake prevention). MUST read FIRST.
-- `.antigravity/rules.md`        ← project master constraints.
-- `.antigravity/notouch.md` / `.antigravity/potential-risks.md` / `.antigravity/bug-history.md` / `.antigravity/sessions.md`
+- `.antigravity/rules.md`          ← project master constraints. MUST read FIRST.
+- `.antigravity/memory-schema.md`  ← unified memory-layer contract (how recall/write works).
+- `.antigravity/notouch.md` / `.antigravity/sessions.md`
+- **Pre-task Signs, bugs, knowledge and risks** now live in `.antigravity/memory.db`
+  (readable mirror under `.antigravity/memory/`). Recall the relevant Signs before
+  a task: `uv run .antigravity/db/query.py "<what you're about to do>" --type sign`.
 
 **Two-strike rule**: if you hit the *same* error twice, STOP trial-and-error and
-re-read `.antigravity/GUARDRAILS.md` + the original instruction before retrying
-(the original instruction + GUARDRAILS win over your latest failure log).
+re-read the relevant Signs (`query.py --type sign`) + the original instruction
+before retrying (the original instruction + Signs win over your latest failure log).
 
 ## Standing instructions (Azuma) — apply to EVERY agent
 - Make the change and run `git add`; treat staging as the work boundary.
 - **NEVER run `git commit` or `git push` until Azuma explicitly says so.** "Done" / "verified" is NOT permission.
 - No need to wait on or report background rollouts / long prod builds (Azuma checks those); tsc/unit verification is enough to report done.
 - Packages: JS = pnpm (+ fnm) only / Python = uv only. NEVER use pip or npm.
-- After editing source, verify it is clean UTF-8 with no NUL bytes (see GUARDRAILS Sign 01).
+- After editing source, verify it is clean UTF-8 with no NUL bytes (see Sign "Source files must stay clean UTF-8" in `memory/signs.md`).
 
 ## Protected files (editing requires explicit approval — HARD STOP)
 - src/collections/*
